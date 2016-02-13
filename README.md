@@ -1,3 +1,5 @@
+Data for Houston Data Viz Meetup February 2016 [data jam](http://www.meetup.com/Houston-Data-Visualization-Meetup/events/228076985/)
+
 # About this data set
 
 These Tweets were pulled from Twitter's Streaming API and collected over a period of ___, from ___ to ____, with little to no intermission.  Tweets containing one of following terms -- `alcoholic`, `depressed`, `depression`, or `suicide` -- are available here both in `csv` (delimited by tabs) and `json`.  Additionally, a sentiment analysis has been run on the Tweets and added to the data as well.  Retweets, by way of the retweet button, have been excluded to try to increase uniqueness of Tweets.
