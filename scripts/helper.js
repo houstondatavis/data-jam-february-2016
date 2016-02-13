@@ -16,7 +16,7 @@ var FEATURES = [{
 }, {
   name: 'Tweet',
   extract: function (data, searchTerms){
-    return data.text.replace(/[\uE000-\uF8FF]/g, '').replace(/\n/g, '');
+    return data.text.replace(/[^\x00-\x7F]/g, '').replace(/\n/g, '');
   }
 }, {
   name: 'Lat',
