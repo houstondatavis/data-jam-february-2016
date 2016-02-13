@@ -15,7 +15,9 @@ var FEATURES = [{
   }
 }, {
   name: 'Tweet',
-  extract: 'text'
+  extract: function (data, searchTerms){
+    return data.text.replace(/[\uE000-\uF8FF]/g, '').replace(/\n/g, '');
+  }
 }, {
   name: 'Lat',
   extract: 'geo.coordinates[0]'
