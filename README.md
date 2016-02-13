@@ -16,4 +16,15 @@ Many attributes of the [full Twitter JSON](https://dev.twitter.com/overview/api/
 | Lat              | Latitude of where Tweet was recorded |
 | Long             | Longitude ...      |
 | N_followers      | Number of followers of Tweeter |
-| Neg              | Value of 0.0 or 1.0 for negative sentitment |
+| Neg              | Value of 0.0 or 1.0 for negative sentiment |
+
+
+
+### npm scripts
+
+Some of the base code used for pre-processing the data are included in the `./scripts` directory.  You can run them like this from the `root` of this project, assuming you have a `./data/_tweets.json` file.
+
+```sh
+npm run-script reshape
+npm run-script convert
+```
