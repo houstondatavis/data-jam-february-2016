@@ -1,3 +1,5 @@
 data/Sept12Oct22_v2.csv
 data/coords.txt
 data/hascoords.txt
+scripts/node_modules/
+scripts/.ipynb_checkpoints/
