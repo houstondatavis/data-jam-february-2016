@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tweets with mental health terms data jam showcase - February 2016</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../data-jam-october-2015/assets/styles.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <h1>data jam on Tweets with mental health terms</h1>
+        <p>
+          <a href="http://www.meetup.com/Houston-Data-Visualization-Meetup/events/228076985/">
+            <i>February 2016, Houston Data Viz</i>
+          </a>
+        </p>
+        <h2>About the Data Set</h2>
+        <p>The data set contains a collection of Tweets containing any of the following terms -- <code>alcoholic</code>, <code>depressed</code>, <code>depression</code>, <code>suicidal</code>, and <code>suicide</code> -- tweeted approximately from October 2014 to January 2015.</p>
+        <p>Tweets with target terms were collected from Twitter's <a target="_blank" href="https://dev.twitter.com/streaming/overview">real-time streaming API</a> and then pre-processed by:</p>
+        <ol>
+          <li><a target="_blank" href="https://github.com/houstondatavis/data-jam-february-2016/blob/master/scripts/0-shapeToCsv.js">Converting collected JSON to tab-delimited columns</a> of each Tweet's related term, date, Tweet body, latitude, longitude, and the Tweeter's follower count</li>
+          <li><a target="_blank" href="https://github.com/houstondatavis/data-jam-february-2016/blob/master/scripts/1-adds-quotes-escapes.R">Reading into R to add quotes and escape special characters</a> in values to preserve as much as the data as possible for reading into Python</li>
+          <li>Running the Tweet bodies <a target="_blank" href="https://github.com/houstondatavis/data-jam-february-2016/blob/master/scripts/2-Classifier.ipynb">through a sentiment analysis</a> trained by a separate set of data. The result is added as a "Neg" score of <code>0.0</code> or <code>1.0</code> for "not negative" and "negative" respectively.  With this additional column, the data was outputted in both `tsv` and `json` for furthering processing and analysis.</li>
+        </ol>
+        <h2>Showcase</h2>
+        <div class="list-group">
+          <div class="list-group-item" data-plot="https://github.com/houstondatavis/data-jam-february-2016/blob/master/results/Depressing%20pronouns.ipynb">
+            <h3>Depressing Pronouns</h3>
+            <i>By Greg</i>
+            <p>What type of pronouns used with the different terms?</p>
+            <svg class="plotter" width="100%" height="50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd"></g>
+              <g fill="rgba(255, 255, 255, 0.9)">
+                <rect x="6" y="18" width="140" height="20"></rect>
+                <text x="10" y="35" fill="#333" font-weight="800">See plots and code</text>
+              </g>
+            </svg>
+          </div>
+          <div class="list-group-item" data-plot="https://github.com/houstondatavis/data-jam-february-2016/blob/master/results/alcoholic1.ipynb">
+            <h3>Tweets by term and location</h3>
+            <i>By Karl</i>
+            <svg class="plotter" width="100%" height="50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd"></g>
+              <g fill="rgba(255, 255, 255, 0.9)">
+                <rect x="6" y="18" width="140" height="20"></rect>
+                <text x="10" y="35" fill="#333" font-weight="800">See plots and code</text>
+              </g>
+            </svg>
+          </div>
+          <div class="list-group-item" data-plot="https://docs.google.com/presentation/d/1qHHLvpreeF1kOI1t2IALMRC-sbyFBCklQOKsZB2H_9U/pub?start=false&loop=false&delayms=3000">
+            <h3>Tweets and followers</h3>
+            <i>By Inder</i>
+            <p>Is there a correlation between followers and Negativity?</p>
+            <svg class="plotter" width="100%" height="50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd"></g>
+              <g fill="rgba(255, 255, 255, 0.9)">
+                <rect x="6" y="18" width="75" height="20"></rect>
+                <text x="10" y="35" fill="#333" font-weight="800">See Plots</text>
+              </g>
+            </svg>
+          </div>
+          <div class="list-group-item" data-plot="https://github.com/houstondatavis/data-jam-february-2016/blob/master/results/suicide-pi.py">
+            <h3>"Suicide" Pi</h3>
+            <i>By Wanjun</i>
+            <p>Displays Tweets on the Raspberry Pi SenseHat LED Matrix</p>
+            <a target="_blank" href="https://github.com/houstondatavis/data-jam-february-2016/blob/master/results/suicide-pi.py">
+              <pre><code>see code</code></pre>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../data-jam-october-2015/assets/main.js"></script>
+  </body>
+</html>
